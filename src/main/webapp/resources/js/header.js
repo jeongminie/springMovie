@@ -1,6 +1,11 @@
 $(document).ready(function(){
 	$(".signup").on("click", function(){
-		location.href="sign/signupForm.jsp";
+		location.href="/signup";
+	});
+	
+	$(".nav-txt-community").on("click", function(){
+		location.href="/community";
+		
 	});
 	
 	$(".nav-sub").hide();
@@ -9,7 +14,6 @@ $(document).ready(function(){
 		$(this).parent(".nav-title").children(".nav-sub").stop().show();
 		$(".page-util").css("backgroundColor", "#BEB4AF");
 		$(".location").css("display", "none");
-
 	});
 	
 	$(".nav-title").on("mouseleave", function(){

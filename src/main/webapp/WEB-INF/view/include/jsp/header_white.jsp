@@ -33,8 +33,8 @@
 						<li><a class="nav-link" href="#">예매정보 알림 신청</a></li>
 					</ul>
 				</li>
-				<li class="nav-item nav-title dropdown">
-					<a class="nav-link nav-title-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>커뮤니티</a>
+				<li class="nav-item nav-title">
+					<a class="nav-link nav-title-item" href="#" role="button" disabled>커뮤니티</a>
 				</li>
 			</ul>
 		</nav>

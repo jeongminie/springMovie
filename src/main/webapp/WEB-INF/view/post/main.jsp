@@ -13,7 +13,8 @@
 	
 	<!-- 제이쿼리 -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<script type="text/javascript" src="/view/include/js/header.js"></script>
+	
+	<script type="text/javascript" src="/resources/js/header.js"></script>
 	
 	<link rel="stylesheet" href="/resources/static/css/main.css">
 	
