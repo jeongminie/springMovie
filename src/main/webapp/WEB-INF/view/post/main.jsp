@@ -34,13 +34,14 @@
 		<section class="main-movie">
 			<div class="bg">
 				<div class="bg-pattern"></div>
-				<img src="https://img.megabox.co.kr/SharedImg/2022/07/18/9VNzlQdAXthFNSO8dtfjE9E166E3sAve_380.jpg" alt="비상선언_칸 영화제 공식 포스터_한글 ver._8월3일대개봉.jpg" onerror="noImg(this, 'main');">
+				<img height="885px" src="https://images.unsplash.com/photo-1612635466104-e3aab50680b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" onerror="noImg(this, 'main');">
 			</div>
 			<div class="cont-area">
 				<div>
 					<p>박스오피스</p>
 					<ul class="rank-list">
 						<li class="rank-item">
+							<p class="rank">1<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
 							<div class="wrap">
 								<div class="summary h-75">
@@ -52,6 +53,7 @@
 							</div>
 						</li>
 						<li class="rank-item">
+							<p class="rank">2<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
 							<div class="wrap">
 								<div class="summary h-75">
@@ -63,6 +65,7 @@
 							</div>
 						</li>
 						<li class="rank-item">
+							<p class="rank">3<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
 							<div class="wrap">
 								<div class="summary h-75">
@@ -74,6 +77,7 @@
 							</div>
 						</li>
 						<li class="rank-item">
+							<p class="rank">4<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
 							<div class="wrap">
 								<div class="summary h-75">
