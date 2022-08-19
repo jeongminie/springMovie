@@ -194,8 +194,15 @@ ul {
 	padding-top: 150px;
 }
 
-.cont-area p {
+.boxo-tit {
+	position : relative;
 	text-align: center;
+}
+
+.more-movie {
+	position: absolute;
+    right: 10px;
+   	top: 150px;
 }
 
 .rank-list {
@@ -231,6 +238,7 @@ ul {
     color: #fff;
     text-shadow: 2px 2px 2px rgb(0 0 0 / 80%);
     background: url(/resources/static/image/bg-main-movie-rank.png) no-repeat 0 0;
+	border-radius : 5px;
 }
 
 .ir {

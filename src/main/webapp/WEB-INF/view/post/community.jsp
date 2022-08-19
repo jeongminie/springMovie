@@ -78,6 +78,16 @@
 		.table th:last-child {
 			border-radius: 0 20px 0 0;
 		}
+		
+		.write-btn {
+			font-size : 20px;
+			display: scroll;
+		    position: fixed;
+		    /* bottom: 10px; */
+		    right: 470px;
+		    top: 180px;
+		    cursor: pointer;
+		}
 	</style>
 		
 </head>
@@ -115,13 +125,17 @@
 						</tr>
 					</tbody>
 				</table>
-				
 			</div>
-			
 		</section>
+		<i class="fa-solid fa-pen write-btn"></i>
 	</div>
 	
 	<script>
+		$(document).ready(function(){
+			$(".write-btn").on("click", function(){
+				location.href = "create"
+			});
+		});
 	</script>
 	
 	

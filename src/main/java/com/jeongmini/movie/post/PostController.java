@@ -20,4 +20,9 @@ public class PostController {
 	public String communityView() {
 		return "post/community";
 	}
+	
+	@RequestMapping("/create")
+	public String createView() {
+		return "post/create";
+	}
 }

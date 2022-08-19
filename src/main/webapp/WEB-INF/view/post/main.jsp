@@ -27,6 +27,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
 	
 	<title>메인</title>
+	
+	<style>
+
+	</style>
 </head>
 <body>
 	<div id="wrap">
@@ -38,7 +42,8 @@
 			</div>
 			<div class="cont-area">
 				<div>
-					<p>박스오피스</p>
+					<p class="boxo-tit">박스오피스</p>
+					<a href="#" class="more-movie">더 많은 영화 보기</a>
 					<ul class="rank-list">
 						<li class="rank-item">
 							<p class="rank">1<span class="ir">위</span></p>
@@ -95,7 +100,6 @@
 				</div>
 			</div>
 			<div class="search-area">
-				<span>예매 정보를 선택 해주세요.</span>
 				<div class="search-link">
 					<div class="cell">
 						<div class="search">

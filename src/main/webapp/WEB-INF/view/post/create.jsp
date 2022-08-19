@@ -28,42 +28,18 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
 	
-	<title>예매정보 알림 신청</title>
+	<title>커뮤니티</title>
 	
 	<style>
-    #filter-area {
-    	width : 1000px;
-    	height: 500px;
-    	margin : auto;
-    	margin-top : 40px;
-    	display: flex;
-    	border-bottom: 1px solid #EBEBEB;
-    }
-    
-    .movie-item {
-    	width : 300px;
-    	border-left : 1px solid #EBEBEB;
-    }
-    
-    .movie-item-end {
-    	width : 400px;
-    	height: 600px;
-    	color : white;
-    	border-left: 1px solid #EBEBEB;
-    	border-right: 1px solid #EBEBEB;
-    }
-    
-    .tit {
-    	height : 40px;
-    	background-color: #BEB4AF;
-    	text-align: center;
-    	padding: 8px;
-    	color : white;
-    }
-    
-    .list {
-    	padding: 20px;
-    }
+		.list-wrap {
+			border-radius: 20px;
+			background-color: #F9F9F9;
+			margin : auto;
+			width : 900px;
+			margin-top: 30px;
+			border : 1px solid #dee2e6;
+		}
+		
 	</style>
 		
 </head>
@@ -74,50 +50,20 @@
 			<div class="inner-wrap">
 				<div class="location">
 					<i class="fa-solid fa-house"></i>
-					<a href="#" title="예매 페이지로 이동">메가박스</a>
-					<a href="#" title="예매 페이지로 이동">예매정보 알림 신청</a>
+					<a href="#" title="예매 페이지로 이동">커뮤니티</a>
 				</div>
 				
 			</div>
 		</div>
 		<section>
-			<div id="filter-area">
-				<div class="movie-item">
-					<p class="tit">영화</p>
-					<div class="list-area">
-						<ul class="list">
-							<li>헌트</li>
-							<li>놉</li>
-							<li>한산: 용의 출현</li>
-							<li>탑건: 매버릭</li>
-							<li>블랙폰</li>
-							<li>비상선언</li>
-							<li>헤어질 결심</li>
-							<li>미니언즈2</li>
-							<li>명탐정 코난: 할로윈의 신부</li>
-						</ul>
-					</div>
-				</div>
-				
-				<div class="movie-item">
-					<div class="tit">극장</div>
-				</div>
-				
-				<div class="movie-item-end">
-					<div class="tit" id="time" autofocus>시간</div>
-				</div>
+			<div class="list-wrap">
+
 			</div>
 		</section>
+		<i class="fa-solid fa-pen"></i>
 	</div>
 	
 	<script>
-		$(document).ready(function(){
-			$("#time").datepicker({
-				dayNamesMin:['월', '화', '수', '목', '금', '토', '일']
-				,
-				
-			});
-		});
 	</script>
 	
 	
