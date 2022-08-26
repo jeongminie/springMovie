@@ -40,14 +40,23 @@
     	border-bottom: 1px solid #EBEBEB;
     }
     
-    .movie-item {
+    .movie-list {
     	width : 300px;
     	border-left : 1px solid #EBEBEB;
     }
     
+    .cinema {
+   		width : 300px;
+    	border-left : 1px solid #EBEBEB;
+    }
+    
+    .cinema .city {
+    
+    	border-right: 1px solid #EBEBEB;
+    }
+    
     .movie-item-end {
     	width : 400px;
-    	height: 600px;
     	color : white;
     	border-left: 1px solid #EBEBEB;
     	border-right: 1px solid #EBEBEB;
@@ -82,7 +91,7 @@
 		</div>
 		<section>
 			<div id="filter-area">
-				<div class="movie-item">
+				<div class="movie-list">
 					<p class="tit">영화</p>
 					<div class="list-area">
 						<ul class="list">
@@ -99,8 +108,12 @@
 					</div>
 				</div>
 				
-				<div class="movie-item">
+				<div class="cinema">
 					<div class="tit">극장</div>
+					<div class="d-flex">
+						<div class="col-6 city"></div>
+						<div class="col-6 address2"></div>
+					</div>
 				</div>
 				
 				<div class="movie-item-end">
