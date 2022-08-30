@@ -13,25 +13,23 @@
 		<nav class="menu mt-3">
 			<ul class="nav nav-pills nav-fill">
 				<li class="nav-item nav-title dropdown">
-					<a class="nav-link nav-title-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>예매 오픈 알림 신청</a>
+					<a class="nav-link nav-title-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>예매</a>
 					<ul class="nav-sub dropdown-menu">
-						<li><a class="nav-link" href="#">CGV</a></li>
-						<li><a class="nav-link" href="#">메가박스</a></li>
-						<li><a class="nav-link" href="#">롯데시네마</a></li>
+						<li><a class="nav-link" href="#">오픈 알림 신청</a></li>
 					</ul>
 				</li>
 				<li class="nav-item nav-title dropdown">
-					<a class="nav-link nav-title-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>메가박스</a>
+					<a class="nav-link nav-title-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>영화</a>
 					<ul class="nav-sub dropdown-menu">
-						<li><a class="nav-link" href="#">상영시간표</a></li>
-						<li><a class="nav-link" href="#">예매정보 알림 신청</a></li>
+						<li><a class="nav-link" href="#">박스오피스</a></li>
+						<li><a class="nav-link" href="#">상영예정작</a></li>
 					</ul>
 				</li>
 				<li class="nav-item nav-title dropdown">
-					<a class="nav-link nav-title-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>롯데시네마</a>
+					<a class="nav-link nav-title-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" disabled>극장</a>
 					<ul class="nav-sub dropdown-menu">
+						<li><a class="nav-link" href="#">위치</a></li>
 						<li><a class="nav-link" href="#">상영시간표</a></li>
-						<li><a class="nav-link" href="#">예매정보 알림 신청</a></li>
 					</ul>
 				</li>
 				<li class="nav-item nav-title">

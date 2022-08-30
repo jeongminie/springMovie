@@ -28,51 +28,102 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
 	
-	<title>예매정보 알림 신청</title>
+	<title>예매 오픈 알림 신청</title>
 	
 	<style>
-    #filter-area {
-    	width : 1000px;
-    	height: 500px;
-    	margin : auto;
-    	margin-top : 40px;
-    	display: flex;
-    	border-bottom: 1px solid #EBEBEB;
-    }
+    	.theater-detail-page {
+			position: relative;
+			z-index: 1;
+			height: 190px;
+			margin: 0;
+			color: #ccc;
+			background-color: #111;
+		}
+		
+		.theater-detail-page .bg-img {
+			position: absolute;
+			left: 50%;
+			top: 0;
+			z-index: 1;
+			width: 1100px;
+			margin: 0 0 0 -550px;
+			height: 100%;
+			background-position: center 0;
+			background-repeat: no-repeat;
+		}
+		
+		.theater-detail-page .bg-mask {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 3;
+			width: 100%;
+			height: 100%;
+			background: url(https://img.megabox.co.kr/static/pc/images/movie/bg-movie-detail-mask.png) no-repeat center 0;
+		}
+		
+		.theater-detail-page .theater-all {
+			position: relative;
+			z-index: 4;
+			width: 1100px;
+			height: 100%;
+			margin: 0 auto;
+			padding: 0;
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list {
+		    display: block;
+		    position: relative;
+		    width: 100%;
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list .area-depth1 {
+    		border-bottom: 1px solid rgba(255,255,255,.15);
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list .area-depth1>li {
+		    float: left;
+		    margin-left: 72px;
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list .area-depth1>li>.depth1 {
+		    position: relative;
+		    display: block;
+		    color: #fff !important;
+		    line-height: 60px;
+		    padding: 0 5px;
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list .area-depth1:after {
+		    clear: both;
+		    content: '';
+		    display: block;
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list .area-depth2 {
+		    display: none;
+		    position: absolute;
+		    top: 60px;
+		    left: 0;
+		    width: 100%;
+		    padding: 25px 30px;
+		    background-color: #fff ;
+		    border-radius: 8px;
+		    z-index: 10;
+		    box-shadow: 10px 10px 10px rgb(0 0 0 / 20%);
+		}
+		
+		.theater-detail-page .theater-all .name {
+		    overflow: hidden;
+		    padding: 20px 0 0 0;
+		    text-align: center;
+		    color: #fff;
+		    font-size: 3.0666em;
+		    font-weight: 400;
+		    line-height: 1.1;
+		    text-shadow: 2px 2px 10px rgb(0 0 0 / 70%);
+		}
     
-    .movie-list {
-    	width : 300px;
-    	border-left : 1px solid #EBEBEB;
-    }
-    
-    .cinema {
-   		width : 300px;
-    	border-left : 1px solid #EBEBEB;
-    }
-    
-    .cinema .city {
-    
-    	border-right: 1px solid #EBEBEB;
-    }
-    
-    .movie-item-end {
-    	width : 400px;
-    	color : white;
-    	border-left: 1px solid #EBEBEB;
-    	border-right: 1px solid #EBEBEB;
-    }
-    
-    .tit {
-    	height : 40px;
-    	background-color: #BEB4AF;
-    	text-align: center;
-    	padding: 8px;
-    	color : white;
-    }
-    
-    .list {
-    	padding: 20px;
-    }
 	</style>
 		
 </head>
@@ -89,38 +140,102 @@
 				
 			</div>
 		</div>
-		<section>
-			<div id="filter-area">
-				<div class="movie-list">
-					<p class="tit">영화</p>
-					<div class="list-area">
-						<ul class="list">
-							<li>헌트</li>
-							<li>놉</li>
-							<li>한산: 용의 출현</li>
-							<li>탑건: 매버릭</li>
-							<li>블랙폰</li>
-							<li>비상선언</li>
-							<li>헤어질 결심</li>
-							<li>미니언즈2</li>
-							<li>명탐정 코난: 할로윈의 신부</li>
-						</ul>
-					</div>
+		<div class="theater-detail-page">
+			<div class="bg-img" style="background-image:url('/resources/static/image/img-theater-detail.jpg');"></div>
+			<div class="bg-mask"></div>
+			<div class="theater-all">
+				<div class="theater-area-list">
+					<ul class="area-depth1">
+						<li class="">
+							<a href="" class="depth1" title="서울 선택">서울</a>
+							<div class="area-depth2">
+								<ul>
+									<li class="on">
+										<a href="/theater?brchNo=1372" title="강남 상세보기">강남
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=0023" title="강남대로(씨티) 상세보기">강남대로(씨티)
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1341" title="강동 상세보기">강동
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1431" title="군자 상세보기">군자
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1003" title="동대문 상세보기">동대문
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1572" title="마곡 상세보기">마곡
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1581" title="목동 상세보기">목동
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1311" title="상봉 상세보기">상봉
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1211" title="상암월드컵경기장 상세보기">상암월드컵경기장
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1331" title="성수 상세보기">성수
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1371" title="센트럴 상세보기">센트럴
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1381" title="송파파크하비오 상세보기">송파파크하비오
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1202" title="신촌 상세보기">신촌
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1561" title="이수 상세보기">이수
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1321" title="창동 상세보기">창동
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1351" title="코엑스 상세보기">코엑스
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1212" title="홍대 상세보기">홍대
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1571" title="화곡 상세보기">화곡
+										</a>
+									</li>
+									<li>
+										<a href="/theater?brchNo=1562" title="ARTNINE 상세보기">ARTNINE
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="">
+						</li>
+					</ul>
 				</div>
-				
-				<div class="cinema">
-					<div class="tit">극장</div>
-					<div class="d-flex">
-						<div class="col-6 city"></div>
-						<div class="col-6 address2"></div>
-					</div>
-				</div>
-				
-				<div class="movie-item-end">
-					<div class="tit" id="time" autofocus>시간</div>
-				</div>
+				<p class="name">강남</p>
 			</div>
-		</section>
+		</div>
 	</div>
 	
 	<script>

@@ -25,10 +25,27 @@
   	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+	<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
 	
 	<title>메인</title>
 	
 	<style>
+	
+		.alarm {
+			margin-top : 10px;
+			height: 30px;
+			width : 250px;
+			/* background-color: rgba(0,0,0,0.4); */
+			background-color : #037b94;
+			border-radius : 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.fa-bell {
+			
+		}
 
 	</style>
 </head>
@@ -55,6 +72,9 @@
 								<div class="score">
 									<p>관람평</p>
 								</div>
+							</div>
+							<div class="alarm">
+								<i class="fa-regular fa-bell"></i>
 							</div>
 						</li>
 						<li class="rank-item">
