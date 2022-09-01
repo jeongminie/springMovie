@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -113,6 +114,30 @@
 		    box-shadow: 10px 10px 10px rgb(0 0 0 / 20%);
 		}
 		
+		.theater-detail-page .theater-all .theater-area-list .area-depth2 ul li {
+		    float: left;
+		    margin: 5px 0;
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list .area-depth2 ul li a {
+		    position: relative;
+		    display: block;
+		    vertical-align: middle;
+		    color: #444;
+		    padding: 0 11px;
+		}
+		
+		.theater-detail-page .theater-all .theater-area-list .area-depth2 ul li a:after {
+		    content: '';
+		    position: absolute;
+		    top: 50%;
+		    right: 0;
+		    width: 1px;
+		    height: 12px;
+		    margin-top: -6px;
+		    background-color: #d8d9db;
+		}
+		
 		.theater-detail-page .theater-all .name {
 		    overflow: hidden;
 		    padding: 20px 0 0 0;
@@ -123,6 +148,17 @@
 		    line-height: 1.1;
 		    text-shadow: 2px 2px 10px rgb(0 0 0 / 70%);
 		}
+		
+		.table{
+			margin : auto;
+			width : 1200px;
+			margin-top: 20px;
+		}
+		
+ 		.table tr td {
+			 text-align: center;
+		}
+		 
     
 	</style>
 		
@@ -134,8 +170,8 @@
 			<div class="inner-wrap">
 				<div class="location">
 					<i class="fa-solid fa-house"></i>
-					<a href="#" title="예매 페이지로 이동">메가박스</a>
-					<a href="#" title="예매 페이지로 이동">예매정보 알림 신청</a>
+					<a href="#" title="예매 페이지로 이동">극장</a>
+					<a href="#" title="예매 페이지로 이동">상영시간표</a>
 				</div>
 				
 			</div>
@@ -146,7 +182,7 @@
 			<div class="theater-all">
 				<div class="theater-area-list">
 					<ul class="area-depth1">
-						<li class="">
+						<li class="on">
 							<a href="" class="depth1" title="서울 선택">서울</a>
 							<div class="area-depth2">
 								<ul>
@@ -236,14 +272,32 @@
 				<p class="name">강남</p>
 			</div>
 		</div>
+		<div>
+			<span class="d-flex justify-content-center mt-5">상영시간표</span>
+			<table class="table">
+				<tr>
+					<c:forEach items="${dateList }" var="dateList" varStatus="status" end="13">
+						<td>${dateList } ${dayStr} </td>
+					</c:forEach>
+				</tr>
+			</table>
+		
+		</div>
 	</div>
 	
 	<script>
 		$(document).ready(function(){
+			
 			$("#time").datepicker({
 				dayNamesMin:['월', '화', '수', '목', '금', '토', '일']
-				,
-				
+			});
+			
+			$(".depth1, .area-depth2").on("mouseover", function(){
+				$(".theater-detail-page .theater-all .theater-area-list .area-depth2").css("display", "block");
+			});
+			
+			$(".depth1, .area-depth2").on("mouseleave", function(){
+				$(".theater-detail-page .theater-all .theater-area-list .area-depth2").css("display", "none");
 			});
 		});
 	</script>
