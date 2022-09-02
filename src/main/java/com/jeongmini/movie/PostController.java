@@ -1,7 +1,10 @@
 package com.jeongmini.movie;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -19,79 +22,74 @@ public class PostController {
 	
 	@RequestMapping("/theaterList")
 	public String detailView(Model model) {
-		Calendar calendar = Calendar.getInstance();
+		// 컴퓨터의 현재 날짜 정보
+		LocalDate localDate = LocalDate.now();
+		System.out.println(localDate);
 		
-		int year = calendar.get(Calendar.YEAR);
-		int month = calendar.get(Calendar.MONTH)+1;
-		int date = calendar.get(Calendar.DATE);
+		//월
+		Month month = localDate.getMonth();
+		//일
+		int date = localDate.getDayOfMonth();
+		//요일
+		//DayOfWeek day = localDate.getDayOfWeek();
+		//월 첫날
+		int firstDate = localDate.withDayOfMonth(1).getDayOfMonth();
+		//월 마지막날
+		int lastDate = localDate.withDayOfMonth(localDate.lengthOfMonth()).getDayOfMonth();
+		//2주치
+//		LocalDate twoWeek = localDate.plusDays(13);
 		
-		//해당월의 첫날
-		int startDate = calendar.getMinimum(Calendar.DATE);
-		//해당월의 마지막 날
-		int endDate = calendar.getActualMaximum(Calendar.DATE);
-		//1일의 요일
-		int startDay = calendar.get(Calendar.DAY_OF_WEEK);
+		System.out.println(month);
+		System.out.println(firstDate);
+		System.out.println(lastDate);
+//		System.out.println(twoWeek.toString());
 		
-		
-		List<String> week = new ArrayList<>();
-		List<Integer> dateList = new ArrayList<>();
-		
-		week.add("일요일");
+		List<String> dateList = new ArrayList<>();
+		List<String> dayOfWeek = new ArrayList<>();
 
-		String dayStr = "";
-		
-		for(int i = 1; i <= endDate; i++) {
-			dateList.add(startDate); 
-				
-//				switch() {
-//				case 0 :
-//					dayStr = "일";
-//					break;
-//				case 1 :
-//					dayStr = "월";
-//					break;
-//				case 2 :
-//					dayStr = "화";
-//					break;
-//				case 3 :
-//					dayStr = "수";
-//					break;
-//				case 4 :
-//					dayStr = "목";
-//					break;
-//				case 5 :
-//					dayStr = "금";
-//					break;
-//				case 6 :
-//					dayStr = "토";
-//					break;
-//				}
-				
-				System.out.println(dayStr);
-				
+		for(int i = 0; i <= 13; i++) {
+			LocalDate twoWeek = localDate.plusDays(i);
+			String twoWeekStr = twoWeek.format(DateTimeFormatter.ofPattern("d"));
 			
+			DayOfWeek day = twoWeek.getDayOfWeek();
+			String dayStr = "";
 			
-			startDate++;
+				switch (day) {
+				case SUNDAY:
+					dayStr = "일";
+					break;
+				case MONDAY:
+					dayStr = "월";
+					break;
+				case TUESDAY:
+					dayStr = "화";
+					break;
+				case WEDNESDAY:
+					dayStr = "수";
+					break;
+				case THURSDAY:
+					dayStr = "목";
+					break;
+				case FRIDAY:
+					dayStr = "금";
+					break;
+				case SATURDAY:
+					dayStr = "토";
+					break;
+				}
+	
+			dateList.add(twoWeekStr);
+			dayOfWeek.add(dayStr);
+			
 		}
-		
-		
+
+				
+		model.addAttribute("dayOfWeek", dayOfWeek);
 		model.addAttribute("dateList", dateList);
-		model.addAttribute("year", year);
-		model.addAttribute("month", month);
-		model.addAttribute("date", date);
-		model.addAttribute("endDate", endDate);
-		model.addAttribute("startDay", startDay);
-		model.addAttribute("dayStr", dayStr);
-		
 		
 		return "post/theaterList";
 	}
 	
-	private Object String(List<Integer> dateList) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@RequestMapping("/community")
 	public String communityView() {
 		return "post/community";

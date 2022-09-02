@@ -149,16 +149,160 @@
 		    text-shadow: 2px 2px 10px rgb(0 0 0 / 70%);
 		}
 		
-		.table{
+		.calendarTable{
 			margin : auto;
 			width : 1200px;
 			margin-top: 20px;
 		}
 		
- 		.table tr td {
+ 		.calendarTable tr td {
 			 text-align: center;
 		}
-		 
+		
+		.theater-list-box {
+		    margin: auto;
+   			width: 1200px;
+		    border-top: 0;
+		}
+		
+		.theater-list-box .theater-list {
+		    margin-top: 30px;
+		}
+		
+		.theater-list-box .theater-tit {
+		    width: 100%;
+		    overflow: hidden;
+		    background-color: #fff;
+		    display: block;
+		    padding: 10px 20px;
+		    background-color: #f7f8f9;
+		    border-top: 1px solid #eaeaea!important;
+		    border-bottom: 1px solid #eaeaea;
+		    margin-top: -1px!important;
+		    margin-bottom: 20px;
+		} 
+		
+		.theater-list-box .theater-tit p {
+		    float: left;
+		    padding: 0;
+		    margin: 0 5px 0 0;
+		    font-weight: 400;
+		}
+		
+		.theater-list-box .theater-list .theater-type-box {
+		    overflow: hidden;
+		    width: 100%;
+		    position: relative;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-type {
+		    text-align: left;
+		    width: 170px;
+		    display: table-cell;
+		    vertical-align: middle;
+		    position: absolute;
+		    top: 20px;
+		    left: 0;
+		    padding: 0!important;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time {
+		    width: 100%;
+		    margin-left: 190px;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-type p.theater-name {
+		    font-size: 1.2em;
+		    color: #444;
+		    font-weight: 400;
+		    margin-bottom: 10px;
+		    line-height: 1em;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-type p.chair {
+		    color: #666;
+		    margin-bottom: 10px;
+		    line-height: 1em;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-type-area {
+		    display: table-cell;
+		    vertical-align: middle;
+		    width: 100px;
+		    background-color: #f2f4f5;
+		    text-align: center;
+		    color: #444;
+		    font-weight: 700;
+		    border-bottom: 0;
+		}
+
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time-box {
+		    display: table-cell;
+		    width: 800px;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table {
+		    border-top: 1px solid #ebebeb;
+		    border-left: 1px solid #ebebeb;
+		    width: 800px;
+		    margin-left: 9px;
+		    width: auto;
+		    table-layout: auto;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table colgroup {
+		    display: none;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td {
+		    width: 99px;
+		    border-right: 1px solid #ebebeb;
+		    border-bottom: 1px solid #ebebeb;
+		    text-align: center;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td .td-ab {
+		    width: 100%;
+		    height: 69px;
+		    display: table;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td .td-ab .txt-center {
+		    display: table-cell;
+		    vertical-align: middle;
+		    position: relative;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td .td-ab .txt-center a {
+		    display: inline-block;
+		    width: 100%;
+		}
+
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td .td-ab .ico-box {
+		    position: absolute;
+		    top: 5px;
+		    left: 5px;
+		    z-index: 1;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td .td-ab p.time {
+		    font-size: 1.2em;
+		    color: #444;
+		    font-weight: 400;
+		    line-height: 1em;
+		    font-family: Roboto;
+		    margin: 0px;
+		}
+		
+		.reserve.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td .td-ab p.chair {
+		    color: #01738b;
+		    margin: 0px;
+		}
+		
+		.theater-list-box .theater-list .theater-type-box .theater-time .time-list-table tbody tr td {
+		    text-align: center;
+		}
+		
     
 	</style>
 		
@@ -274,17 +418,83 @@
 		</div>
 		<div>
 			<span class="d-flex justify-content-center mt-5">상영시간표</span>
-			<table class="table">
+			<table class="table calendarTable">
 				<tr>
-					<c:forEach items="${dateList }" var="dateList" varStatus="status" end="13">
-						<td>${dateList } ${dayStr} </td>
+					<c:forEach items="${dateList }" var="dateList" varStatus="status">
+						<td>
+							<c:choose>
+								<c:when test="${dayOfWeek[status.index] eq '토'}">
+									<span style="color: blue">${dateList }<br>${dayOfWeek[status.index]}</span> 
+								</c:when>
+								<c:when test="${dayOfWeek[status.index] eq '일'}">
+									<span style="color: red">${dateList }<br>${dayOfWeek[status.index]}</span> 
+								</c:when>
+								<c:otherwise>
+									${dateList }<br>${dayOfWeek[status.index]}
+								</c:otherwise>
+							</c:choose>
+						</td>
 					</c:forEach>
 				</tr>
-			</table>
-		
+			</table>	
 		</div>
-	</div>
-	
+		<div class="reserve theater-list-box">
+			<div class="theater-list">
+			    <div class="theater-tit">	
+			        <p class="movie-grade age-15"></p>	
+			        <p><a href="/movie-detail?rpstMovieNo=22022900" title="헤어질 결심 상세보기">헤어질 결심</a></p>	
+			    </div>
+			    <div class="theater-type-box">	
+			        <div class="theater-type">		
+			            <p class="theater-name">5관</p>		
+			            <p class="chair">총 96석</p>	
+			        </div>	
+			        <div class="theater-time">		
+			            <div class="theater-type-area">2D</div>		
+			            <div class="theater-time-box">			
+			                <table class="time-list-table">				
+			                    <colgroup>					
+			                        <col style="width:99px;">					
+			                        <col style="width:99px;">					
+			                        <col style="width:99px;">					
+			                        <col style="width:99px;">					
+			                        <col style="width:99px;">					
+			                        <col style="width:99px;">					
+			                        <col style="width:99px;">					
+			                        <col style="width:99px;">				
+			                    </colgroup>				
+			                    <tbody>				
+			                        <tr>
+			                            <td class="" brch-no="1372" play-schdl-no="2209021372029" rpst-movie-no="22022900" theab-no="05" play-de="20220902" play-seq="3">	
+				                            <div class="td-ab">		
+				                            	<div class="txt-center">			
+					                            	<a href="" title="영화예매하기">				
+					                            		<p class="time">14:45</p>				
+					                            		<p class="chair">85석</p>								
+					                            	</a>		
+				                            	</div>	
+				                            </div>
+			                            </td>
+			                            <td class="" brch-no="1372" play-schdl-no="2209021372031" rpst-movie-no="22022900" theab-no="05" play-de="20220902" play-seq="5">	
+			                                <div class="td-ab">		
+			                                    <div class="txt-center">			
+			                                        <a href="" title="영화예매하기">				
+			                                            <p class="time">19:50</p>				
+			                                            <p class="chair">62석</p>								
+			                                        </a>		
+			                                    </div>	
+			                                </div>                                
+			                            </td>                            
+			                        </tr>                            
+			                    </tbody>			
+			                </table>		
+			            </div>        
+			        </div>	
+			    </div>
+			</div>
+		</div>
+		
+	</div> 
 	<script>
 		$(document).ready(function(){
 			
