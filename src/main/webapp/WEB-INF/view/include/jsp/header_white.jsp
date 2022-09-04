@@ -41,4 +41,14 @@
 			<a href="#"><i class="fa-solid fa-user"></i></a>
 		</div>	
 	</div>
+	<div class="page-util">
+		<div class="inner-wrap">
+			<div class="location">
+				<i class="fa-solid fa-house"></i>
+				<a href="#" title="예매 페이지로 이동">극장</a>
+				<a href="#" title="예매 페이지로 이동">상영시간표</a>
+			</div>
+			
+		</div>
+	</div>
 </header>

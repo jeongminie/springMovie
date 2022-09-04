@@ -54,30 +54,30 @@ public class PostController {
 			DayOfWeek day = twoWeek.getDayOfWeek();
 			String dayStr = "";
 			
-				switch (day) {
-				case SUNDAY:
-					dayStr = "일";
-					break;
-				case MONDAY:
-					dayStr = "월";
-					break;
-				case TUESDAY:
-					dayStr = "화";
-					break;
-				case WEDNESDAY:
-					dayStr = "수";
-					break;
-				case THURSDAY:
-					dayStr = "목";
-					break;
-				case FRIDAY:
-					dayStr = "금";
-					break;
-				case SATURDAY:
-					dayStr = "토";
-					break;
-				}
-	
+			switch (day) {
+			case SUNDAY:
+				dayStr = "일";
+				break;
+			case MONDAY:
+				dayStr = "월";
+				break;
+			case TUESDAY:
+				dayStr = "화";
+				break;
+			case WEDNESDAY:
+				dayStr = "수";
+				break;
+			case THURSDAY:
+				dayStr = "목";
+				break;
+			case FRIDAY:
+				dayStr = "금";
+				break;
+			case SATURDAY:
+				dayStr = "토";
+				break;
+			}
+
 			dateList.add(twoWeekStr);
 			dayOfWeek.add(dayStr);
 			
@@ -88,6 +88,11 @@ public class PostController {
 		model.addAttribute("dateList", dateList);
 		
 		return "post/theaterList";
+	}
+	
+	@RequestMapping("openAlarm")
+	public String openAlarmView() {
+		return "post/openAlarmView";
 	}
 	
 	@RequestMapping("/community")

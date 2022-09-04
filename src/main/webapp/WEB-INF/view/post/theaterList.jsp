@@ -29,7 +29,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
 	
-	<title>예매 오픈 알림 신청</title>
+	<title>상영시간표</title>
 	
 	<style>
     	.theater-detail-page {
@@ -310,16 +310,6 @@
 <body>
 	<div id="wrap">
 		<jsp:include page="../include/jsp/header_white.jsp" />
-		<div class="page-util">
-			<div class="inner-wrap">
-				<div class="location">
-					<i class="fa-solid fa-house"></i>
-					<a href="#" title="예매 페이지로 이동">극장</a>
-					<a href="#" title="예매 페이지로 이동">상영시간표</a>
-				</div>
-				
-			</div>
-		</div>
 		<div class="theater-detail-page">
 			<div class="bg-img" style="background-image:url('/resources/static/image/img-theater-detail.jpg');"></div>
 			<div class="bg-mask"></div>
