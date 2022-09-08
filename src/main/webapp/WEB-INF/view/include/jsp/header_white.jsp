@@ -33,7 +33,7 @@
 					</ul>
 				</li>
 				<li class="nav-item nav-title">
-					<a class="nav-link nav-title-item" href="#" role="button" disabled>커뮤니티</a>
+					<a class="nav-link nav-title-item" href="#" role="button" disabled>마이페이지</a>
 				</li>
 			</ul>
 		</nav>

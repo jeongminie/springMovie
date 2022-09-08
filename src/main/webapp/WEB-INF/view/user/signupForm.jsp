@@ -86,7 +86,7 @@
 					</tr>
 					<tr>
 						<th>생년월일</th>
-						<td><input type="text" class="text-input"></td>
+						<td><input type="text" class="text-input" placeholder="YYYYMMDD"></td>
 					</tr>
 					<tr>
 						<th>휴대폰 번호</th>
@@ -111,7 +111,16 @@
 					</tr>
 					<tr>
 						<th>이메일 주소</th>
-						<td><input type="text" class="text-input"></td>
+						<td>
+							<div class="d-flex">
+								<input type="text" class="text-input col-5">
+								<span style="margin : 0 4px 0 4px;">@</span>
+								<select class="text-input col-5">
+									<option>1</option>
+									<option>2</option>
+								</select>
+							</div>
+						</td>
 					</tr>
 					<tr>
 						<th>마케팅 활용을 위한 개인정보 수집 이용 안내(선택)</th>

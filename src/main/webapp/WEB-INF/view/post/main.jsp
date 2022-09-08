@@ -30,22 +30,7 @@
 	<title>메인</title>
 	
 	<style>
-	
-		.alarm {
-			margin-top : 10px;
-			height: 30px;
-			width : 250px;
-			/* background-color: rgba(0,0,0,0.4); */
-			background-color : #037b94;
-			border-radius : 5px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
 		
-		.fa-bell {
-			
-		}
 
 	</style>
 </head>
@@ -65,7 +50,7 @@
 						<li class="rank-item">
 							<p class="rank">1<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
-							<div class="wrap">
+							<div class="fade-wrap">
 								<div class="summary h-75">
 									<p>한순간의 실수도 용납되지 않는 하늘 위, 가장 압도적인 비행이 시작된다! 최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교 교관으로 발탁된다.</p>
 								</div>
@@ -74,13 +59,13 @@
 								</div>
 							</div>
 							<div class="alarm">
-								<i class="fa-regular fa-bell"></i>
+								<button type="button" class="btn alarmBtn"><i class="fa-regular fa-bell"></i></button>
 							</div>
 						</li>
 						<li class="rank-item">
 							<p class="rank">2<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
-							<div class="wrap">
+							<div class="fade-wrap">
 								<div class="summary h-75">
 									<p>한순간의 실수도 용납되지 않는 하늘 위, 가장 압도적인 비행이 시작된다! 최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교 교관으로 발탁된다.</p>
 								</div>
@@ -92,7 +77,7 @@
 						<li class="rank-item">
 							<p class="rank">3<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
-							<div class="wrap">
+							<div class="fade-wrap">
 								<div class="summary h-75">
 									<p>한순간의 실수도 용납되지 않는 하늘 위, 가장 압도적인 비행이 시작된다! 최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교 교관으로 발탁된다.</p>
 								</div>
@@ -104,7 +89,7 @@
 						<li class="rank-item">
 							<p class="rank">4<span class="ir">위</span></p>
 							<img class="poster" src="https://t1.daumcdn.net/movie/4eb261668eb43a125d0adc250a89adb48216c005">				
-							<div class="wrap">
+							<div class="fade-wrap">
 								<div class="summary h-75">
 									<p>한순간의 실수도 용납되지 않는 하늘 위, 가장 압도적인 비행이 시작된다! 최고의 파일럿이자 전설적인 인물 매버릭(톰 크루즈)은 자신이 졸업한 훈련학교 교관으로 발탁된다.</p>
 								</div>
@@ -170,12 +155,12 @@
 		$(document).ready(function(){
 			$(".rank-item").on("mouseover", function(e){
 				if ($(e.target).is('.poster')) {
-					$(this).children(".wrap").fadeIn();
+					$(this).children(".fade-wrap").fadeIn();
 			    }
 			}); 
 			
 			$(".rank-item").on("mouseleave", function(){
-				$(".wrap").fadeOut();
+				$(".fade-wrap").fadeOut();
 			});
 		});
 	</script>

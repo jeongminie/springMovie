@@ -12,15 +12,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/movie")
+@RequestMapping("/movie/")
 public class PostController {
 
-	@RequestMapping("/main")
+	@RequestMapping("main")
 	public String mainView() {
 		return "post/main";
 	}
 	
-	@RequestMapping("/theaterList")
+	@RequestMapping("theaterList")
 	public String detailView(Model model) {
 		// 컴퓨터의 현재 날짜 정보
 		LocalDate localDate = LocalDate.now();
@@ -93,6 +93,16 @@ public class PostController {
 	@RequestMapping("openAlarm")
 	public String openAlarmView() {
 		return "post/openAlarmView";
+	}
+	
+	@RequestMapping("boxoffice")
+	public String boxofficeView() {
+		return "post/boxoffice";
+	}
+	
+	@RequestMapping("comingsoon")
+	public String comingsoonView() {
+		return "post/comingsoon";
 	}
 	
 	@RequestMapping("/community")

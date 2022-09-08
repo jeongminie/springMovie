@@ -76,7 +76,7 @@
 		.alarm-box {
 			position : absolute;
 			margin : auto;
-			margin-top : 50px;
+			margin-top : 30px;
 			width : 1000px;
 			height : 500px;
 			position: relative;
@@ -94,23 +94,42 @@
 		
 		.movie-tit {
 			text-align: center;
-			margin : 20px 0px 20px 0px;
+			margin : 15px 0px 15px 0px;
 		}
 		
-		.select-area{
+		.select-wrap {
 			width: 250px;
 			margin: auto;
 		}
 		
-		.screen-select {
+		.select {
 			position : relative;
-			z-index: -1;
+			z-index: -2;
 		}
 		
-		.screen-select-option {
+		.select-option {
 			position : relative;
 			z-index: 1;
 		}
+		
+		.select-date {
+			width : 250px;
+			border-radius: .375rem;
+		}
+		
+		.select-date::placeholder {
+  			color: black;
+  		}	
+  		
+		.ui-datepicker {
+			width : 250px;
+			
+		}
+		
+		.fa-calendar {
+			top : 5px;
+		}
+		
 		
 	</style>
 </head>
@@ -126,12 +145,12 @@
 			<div class="movie-tit">
 				<span>탑건-매버릭</span>
 			</div>
-			<div class="select-area">
-				<div class="screen">
-					<select class="form-select screen-select">
+			<div class="select-wrap">
+				<div class="select-area">
+					<select class="form-select select">
 						<option value="" hidden>속성</option>
 					</select>
-					<select class="form-select screen-select-option d-none" multiple>
+					<select class="form-select select-option d-none" multiple>
 						<option value="1">DOLBY CINEMA</option>
 						<option value="2">THE BOUTIQUE</option>
 						<option value="3">MX</option>
@@ -140,11 +159,11 @@
 						<option value="6">MEGABOX KIDS</option>
 					</select>
 				</div>
-				<div class="screen mt-2">
-					<select class="form-select screen-select">
+				<div class="select-area mt-2">
+					<select class="form-select select">
 						<option disabled selected hidden>극장</option>
 					</select>
-					<select class="form-select screen-select-option d-none" multiple>
+					<select class="form-select select-option d-none" multiple>
 						<option value="1">강남</option>
 						<option value="2">강남대로(씨티)</option>
 						<option value="3">강동</option>
@@ -153,6 +172,12 @@
 						<option value="6">마곡</option>
 					</select>
 				</div>
+				<div class="select-area mt-2">
+					<input type="text" class="form-control select-date" placeholder="날짜" id="startDate" onfocus="this.blur()" style="cursor:pointer">
+				</div>
+				<div class="alarm">
+					<button type="button" class="btn alarmBtn"><i class="fa-regular fa-bell"></i></button>
+				</div>
 			</div>
 		</div>
 	
@@ -160,8 +185,19 @@
 	<script>
 		$(document).ready(function(){
 			
-			$(".screen").on("click", function(e){
-				var selected = $(this).children(".screen-select-option");
+			$("#startDate").datepicker({
+	               showButtonPanel: true, 
+	               currentText: '오늘',
+	               dateFormat: "yy-mm-dd",
+	               dayNamesMin:['월', '화', '수', '목', '금', '토', '일'],
+	               minDate : 0
+			
+			});
+			
+			
+			$(".select-area").on("click", function(){
+				
+				var selected = $(this).children(".select-option");
 				
 				if(selected.hasClass('d-none')) {
 					selected.removeClass('d-none');
@@ -170,16 +206,15 @@
 				}
 			});
 			
-			$(".screen").children(".screen-select-option").change(function(e){
+			$(".select-area").children(".select-option").change(function(e){
 				var selectedVal = $(this).val();
 				var selectedTxt =  $(this).find('option:selected').text();
 				
 				if(selectedTxt != null) {
-					$(this).prev(".screen-select").find('option:selected').text(selectedTxt);
+					$(this).prev(".select").find('option:selected').text(selectedTxt);
 				}
-				
-				
 			});
+			
 		});	
 	</script>
 	

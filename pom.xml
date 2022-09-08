@@ -114,6 +114,29 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		
+		<dependency> 
+		    <groupId>org.apache.poi</groupId> 
+		    <artifactId>poi-ooxml</artifactId> 
+		    <version>3.17</version> 
+		</dependency> 
+		
+	  	<dependency>
+	  		<groupId>org.mybatis</groupId>
+	  		<artifactId>mybatis</artifactId>
+	  		<version>3.4.4</version>
+	  	</dependency>
+	  	<dependency>
+	  		<groupId>mysql</groupId>
+	  		<artifactId>mysql-connector-java</artifactId>
+	  		<version>8.0.11</version>
+	  	</dependency>
+		
 	</dependencies>
 	<build>
         <plugins>

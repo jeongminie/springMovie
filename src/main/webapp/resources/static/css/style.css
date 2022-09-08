@@ -263,6 +263,28 @@ ul {
 	background-color : #BEB4AF;
 	border : 0px;
 }
+
+.alarmBtn {
+	margin-top : 10px;
+	height: 30px;
+	width : 250px;
+	background-color : #037b94;
+	border-radius : 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.alarmBtn:hover {
+	background-color: #037b94;
+	border : 0px;
+}
+
+.fa-bell {
+	color : white;
+}
+		
+
 /* modal */
 
 .login, .signup {
@@ -276,7 +298,7 @@ ul {
 }
 
 /* datepicker */
-.ui-widget-header { border: 0px solid #dddddd; background: #fff; } 
+/* .ui-widget-header { border: 0px solid #dddddd; background: #fff; } 
 
 .ui-datepicker-calendar>thead>tr>th { font-size: 14px !important; } 
 
@@ -347,5 +369,5 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 
 .inp { padding: 10px 10px; background-color: #f1f1f1; border-radius: 4px; border: 0px; } 
 
-.inp:focus { outline: none; background-color: #eee; }
+.inp:focus { outline: none; background-color: #eee; } */
 
