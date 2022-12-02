@@ -113,9 +113,9 @@ public class UpdateDatabaseFromExcel {
 		PreparedStatement pstmt = null;
 		PreparedStatement pstmt2 = null;
 //		String query = "INSERT INTO theater (city, theaterCode, theaterNm, totalScreen, totalSeat, businessNm, status, adress, callNumber, homepage) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-//		String query = "INSERT INTO movieInfo2022 (openYear, movieCode, title, genre, nation, runningTime, age, openDate, directors, actors, story, updatedAt) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())";
-		String query = "INSERT INTO runningCurrent (movieCode) values (?)";
-		String query2 = "DELETE FROM runningCurrent";
+		String query = "INSERT INTO movieInfo2022 (openYear, movieCode, title, genre, nation, runningTime, age, openDate, directors, actors, story, createdAt) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, now())";
+//		String query = "INSERT INTO runningCurrent (movieCode) values (?)";
+		String query2 = "DELETE FROM movieInfo2022";
 		
 		System.out.println("총 라인 수 : "+list.size());
 		
@@ -149,16 +149,16 @@ public class UpdateDatabaseFromExcel {
 				
 //				앞의 쿼리에서 물음표에 들어갈 항목들을 순서대로 기입
 				pstmt.setInt(1, (int)(Double.parseDouble(list.get(i).get(0))));
-//				pstmt.setInt(2, (int)(Double.parseDouble(list.get(i).get(1))));
-//				pstmt.setString(3, list.get(i).get(2));
-//				pstmt.setString(4, list.get(i).get(3));
-//				pstmt.setString(5, list.get(i).get(4));
-//				pstmt.setString(6, list.get(i).get(5));
-//				pstmt.setString(7, list.get(i).get(6));
-//				pstmt.setString(8, list.get(i).get(7));
-//				pstmt.setString(9, list.get(i).get(8));
-//				pstmt.setString(10, list.get(i).get(9));
-//				pstmt.setString(11, list.get(i).get(10));
+				pstmt.setInt(2, (int)(Double.parseDouble(list.get(i).get(1))));
+				pstmt.setString(3, list.get(i).get(2));
+				pstmt.setString(4, list.get(i).get(3));
+				pstmt.setString(5, list.get(i).get(4));
+				pstmt.setString(6, list.get(i).get(5));
+				pstmt.setString(7, list.get(i).get(6));
+				pstmt.setString(8, list.get(i).get(7));
+				pstmt.setString(9, list.get(i).get(8));
+				pstmt.setString(10, list.get(i).get(9));
+				pstmt.setString(11, list.get(i).get(10));
 //				pstmt.setString(8, fm.format(openDate));
 				
 				//update query 실행
